@@ -1,0 +1,3 @@
+Hallo aus dem Container!
+
+Aus der IntelliJ IDEA
