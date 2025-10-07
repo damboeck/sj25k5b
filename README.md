@@ -18,6 +18,11 @@ docker rm u5bssh
 docker run -itd --name u5bssh -p 2022:22 -v C:\github\Unterricht-HTL-DAMB\s25k5b\docker\ubuntu-ssh\data:/data ubuntu-ssh
 </pre>
 
+<pre>
+docker compose up -d
+docker compose up -d --build
+</pre>
+
 ## Hausaufgaben
 * Erstelle einen Docker-Container mit einem Apache-Webserver basierend auf Ubuntu:24.04
 * Der Webserver soll eine statische HTML-Seite ausliefern die in einem lokalen Verzeichnis liegt

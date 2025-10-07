@@ -1,0 +1,20 @@
+services:
+  myssh:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ubuntu-ssh
+    container_name: ${ssh_name:-mein_container}
+    env_file:
+      - .env
+    ports:
+      - "${ssh_port:-22}:22"
+    volumes:
+      - "${data_volume}:/data"
+    restart: unless-stopped
+    networks:
+      - mein_net
+
+networks:
+  mein_net:
+    name: mein_net
