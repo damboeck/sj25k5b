@@ -19,6 +19,7 @@ docker run -itd --name u5bssh -p 2022:22 -v C:\github\Unterricht-HTL-DAMB\s25k5b
 </pre>
 
 <pre>
+apt-get install iputils-ping openssh-client
 docker compose up -d
 docker compose up -d --build
 </pre>

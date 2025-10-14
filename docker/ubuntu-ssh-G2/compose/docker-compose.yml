@@ -1,0 +1,23 @@
+services:
+  myssh:
+    image: ubuntu-ssh2
+    container_name: ${ssh_name:-mein_container}
+    ports:
+      - "${ssh_port:-22}:22"
+    volumes:
+      - "${data_volume}:/data"
+    restart: unless-stopped
+    networks:
+      - mein_net2
+
+  ub2:
+    image: ubuntu:24.04
+    container_name: ${ub_name:-mein_ubuntu2}
+    command: sleep infinity
+    restart: unless-stopped
+    networks:
+      - mein_net2
+
+networks:
+  mein_net2:
+    name: mein_net2
