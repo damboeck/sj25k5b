@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  web:
+    build:
+      context: .
+      args:
+        PHP_VERSION: ${PHP_VERSION}
+    env_file:
+      - .env
+    environment:
+      - CONTAINER_WEBROOT=${CONTAINER_WEBROOT}
+      - SSH_USER=${SSH_USER}
+      - SSH_PASSWORD=${SSH_PASSWORD}
+    ports:
+      - "${HOST_HTTP_PORT}:80"
+      - "${HOST_HTTPS_PORT}:443"
+      - "${HOST_SSH_PORT}:22"
+    volumes:
+      - "${WEBROOT_HOST}:${CONTAINER_WEBROOT}:rw"
+    restart: unless-stopped
